@@ -4,7 +4,7 @@
 
 ---
 
-# <div align="center">redacted</div>
+# <div align="center">Hi</div>
 
 ### Contact Details
 * **Email:** `?`
