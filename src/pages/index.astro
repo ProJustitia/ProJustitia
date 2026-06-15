@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="ProJustitia | Robotics & Engineering">
+	<main>
+		<div class="status-box">
+			<span class="pulse"></span> SYSTEM_READY: Building autonomous systems...
+		</div>
+
+		<h1>HELLO!</h1>
+		<p>I am a <strong>Robotics Engineer</strong>, software developer, and whatever else i decided to be today.</p>
+		
+		<br />
+		<!-- Kept the blurred background as requested -->
+		<img
+			style="filter:blur(25px);z-index:0;opacity:25%;display:block;margin-left:auto;margin-right:auto;max-width:100%;width:100%;height:auto;margin:0 auto;object-fit:cover;"
+			src="/frieren.gif"
+			alt="Background atmosphere"
+		/>
+		<br />
+	</main>
+</Layout>
+
+<style>
+	main {
+		padding-top: 1rem;
+		font-size: 18px;
+		line-height: 1.6;
+	}
+	strong {
+		color: var(--accent);
+	}
+</style>
