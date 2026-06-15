@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap"
 
 // https://astro.build/config
 export default defineConfig({
-	site: "https://projustitia.example.com",
+	site: "https://projustitia.pages.dev",
 	output: "static",
 	devToolbar: {
 		enabled: false,
