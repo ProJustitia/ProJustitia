@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/assets/train.gif" width="80%">
+  <img src="https://github.com/ProJustitia/ProJustitia/blob/main/public/assets/train.gif?raw=true" alt="Train" width="80%">
 </div>
 
 ---
