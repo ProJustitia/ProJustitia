@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/assets/train.gif" width="800">
+  <img src="public/assets/train.gif" width="80%">
 </div>
 
 ---
