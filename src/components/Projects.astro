@@ -9,23 +9,25 @@ const others = site.projects.filter((p) => !p.featured);
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
     <div class="mb-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div>
-        <span class="font-mono text-xs uppercase tracking-[0.3em] text-coral">02 — Work</span>
-        <h2 class="mt-4 font-display text-4xl font-bold text-cream sm:text-5xl">
+        <span data-reveal="left" class="font-mono text-xs uppercase tracking-[0.3em] text-coral">02 — Work</span>
+        <h2 data-reveal data-delay="1" class="mt-4 font-display text-4xl font-bold text-cream sm:text-5xl">
           Selected projects
         </h2>
       </div>
-      <p class="max-w-xs font-mono text-xs uppercase tracking-widest text-cream-muted">
+      <p data-reveal="right" data-delay="2" class="max-w-xs font-mono text-xs uppercase tracking-widest text-cream-muted">
         A curated collection of things I've built
       </p>
     </div>
 
     <div class="grid gap-6 lg:grid-cols-2">
       {
-        featured.map((project) => (
+        featured.map((project, i) => (
           <a
             href={project.href}
             target="_blank"
             rel="noopener noreferrer"
+            data-reveal="scale"
+            data-delay={String(i + 1)}
             class="project-card group relative overflow-hidden rounded-3xl border border-white/5 bg-ink-light p-8 transition-all hover:border-teal/20 lg:p-10"
           >
             <div class="flex items-start justify-between">
@@ -60,9 +62,11 @@ const others = site.projects.filter((p) => !p.featured);
 
     <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
       {
-        others.map((project) => (
+        others.map((project, i) => (
           <a
             href={project.href}
+            data-reveal
+            data-delay={String(Math.min(i + 1, 6))}
             class="project-card group relative overflow-hidden rounded-2xl border border-white/5 bg-ink-light p-6 transition-all hover:border-teal/20"
           >
             <div class="flex items-start justify-between">

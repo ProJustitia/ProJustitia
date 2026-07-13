@@ -6,13 +6,13 @@ const doubled = [...site.skills, ...site.skills];
 
 <section id="skills" class="relative overflow-hidden border-y border-white/5 py-20">
   <div class="mx-auto max-w-7xl px-6 lg:px-10">
-    <span class="font-mono text-xs uppercase tracking-[0.3em] text-coral">03 — Skills</span>
-    <h2 class="mt-4 font-display text-3xl font-bold text-cream sm:text-4xl">
+    <span data-reveal="left" class="font-mono text-xs uppercase tracking-[0.3em] text-coral">03 — Skills</span>
+    <h2 data-reveal data-delay="1" class="mt-4 font-display text-3xl font-bold text-cream sm:text-4xl">
       Tools & technologies
     </h2>
   </div>
 
-  <div class="relative mt-12">
+  <div data-reveal="fade" data-delay="2" class="relative mt-12">
     <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-ink to-transparent"></div>
     <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-ink to-transparent"></div>
 
@@ -31,11 +31,11 @@ const doubled = [...site.skills, ...site.skills];
   </div>
 
   <div class="mx-auto mt-20 max-w-7xl px-6 lg:px-10">
-    <h3 class="font-mono text-xs uppercase tracking-[0.3em] text-cream-muted">Experience</h3>
+    <h3 data-reveal class="font-mono text-xs uppercase tracking-[0.3em] text-cream-muted">Experience</h3>
     <div class="mt-8 space-y-0">
       {
         site.experience.map((item, i) => (
-          <div class="grid gap-4 border-t border-white/5 py-8 sm:grid-cols-12 sm:gap-8">
+          <div data-reveal data-delay={String(Math.min(i + 1, 4))} class="grid gap-4 border-t border-white/5 py-8 sm:grid-cols-12 sm:gap-8">
             <div class="sm:col-span-3">
               <p class="font-mono text-xs uppercase tracking-widest text-cream-muted">
                 {item.period}

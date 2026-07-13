@@ -8,12 +8,12 @@ import { site } from "../content/site";
   <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
     <div class="grid gap-16 lg:grid-cols-2">
       <div>
-        <span class="font-mono text-xs uppercase tracking-[0.3em] text-coral">04 — Contact</span>
-        <h2 class="mt-4 font-display text-4xl font-bold leading-tight text-cream sm:text-5xl lg:text-6xl">
+        <span data-reveal="left" class="font-mono text-xs uppercase tracking-[0.3em] text-coral">04 — Contact</span>
+        <h2 data-reveal data-delay="1" class="mt-4 font-display text-4xl font-bold leading-tight text-cream sm:text-5xl lg:text-6xl">
           Let's build<br />
           <span class="text-teal">something</span> together.
         </h2>
-        <p class="mt-6 max-w-md text-lg text-cream-muted">
+        <p data-reveal data-delay="2" class="mt-6 max-w-md text-lg text-cream-muted">
           Whether you have a project in mind, want to collaborate, or just want to say hi — my inbox is always open.
         </p>
       </div>
@@ -21,6 +21,7 @@ import { site } from "../content/site";
       <div class="flex flex-col justify-center">
         <a
           href={`mailto:${site.email}`}
+          data-reveal="scale" data-delay="2"
           class="group flex items-center justify-between rounded-2xl border border-white/5 bg-ink-light p-8 transition-all hover:border-teal/30 hover:bg-ink-muted"
         >
           <div>
@@ -44,6 +45,7 @@ import { site } from "../content/site";
           <a
             href={site.social.github}
             rel="noopener noreferrer"
+            data-reveal="scale" data-delay="3"
             class="group rounded-2xl border border-white/5 bg-ink-light p-6 transition-all hover:border-teal/30"
           >
             <p class="font-mono text-xs uppercase tracking-widest text-cream-muted">GitHub</p>
@@ -53,6 +55,7 @@ import { site } from "../content/site";
             href={site.social.linkedin}
             target="_blank"
             rel="noopener noreferrer"
+            data-reveal="scale" data-delay="4"
             class="group rounded-2xl border border-white/5 bg-ink-light p-6 transition-all hover:border-teal/30"
           >
             <p class="font-mono text-xs uppercase tracking-widest text-cream-muted">LinkedIn</p>
