@@ -1,5 +1,5 @@
 <div align="center">
-  <video src="public/assets/train.mp4" autoplay loop muted playsinline width="80%"></video>
+  <video src="https://github.com/ProJustitia/ProJustitia/raw/main/public/assets/train.mp4" autoplay loop muted playsinline width="100%"></video>
 </div>
 
 ---
