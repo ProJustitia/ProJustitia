@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="public/assets/cat.gif" alt="Cat" style="width: 80%; height: 120px;">
+  <img src="public/assets/cat.gif" alt="Cat" style="width: 80%; height: 100%;">
 </div>
 
 ---
