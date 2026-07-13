@@ -1,0 +1,98 @@
+---
+import { site } from "../content/site";
+
+const featured = site.projects.filter((p) => p.featured);
+const others = site.projects.filter((p) => !p.featured);
+---
+
+<section id="work" class="relative py-32">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <div class="mb-16 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-[0.3em] text-coral">02 — Work</span>
+        <h2 class="mt-4 font-display text-4xl font-bold text-cream sm:text-5xl">
+          Selected projects
+        </h2>
+      </div>
+      <p class="max-w-xs font-mono text-xs uppercase tracking-widest text-cream-muted">
+        A curated collection of things I've built
+      </p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-2">
+      {
+        featured.map((project) => (
+          <a
+            href={project.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="project-card group relative overflow-hidden rounded-3xl border border-white/5 bg-ink-light p-8 transition-all hover:border-teal/20 lg:p-10"
+          >
+            <div class="flex items-start justify-between">
+              <span class="font-mono text-xs text-cream-muted">{project.year}</span>
+              <svg
+                class="h-5 w-5 text-cream-muted transition-all group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-teal"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </div>
+            <h3 class="mt-8 font-display text-2xl font-bold text-cream transition-colors group-hover:text-teal lg:text-3xl">
+              {project.title}
+            </h3>
+            <p class="mt-4 max-w-md text-cream-muted">{project.description}</p>
+            <div class="mt-6 flex flex-wrap gap-2">
+              {
+                project.tags.map((tag) => (
+                  <span class="rounded-full border border-white/5 bg-ink px-3 py-1 font-mono text-xs text-cream-muted">
+                    {tag}
+                  </span>
+                ))
+              }
+            </div>
+          </a>
+        ))
+      }
+    </div>
+
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        others.map((project) => (
+          <a
+            href={project.href}
+            class="project-card group relative overflow-hidden rounded-2xl border border-white/5 bg-ink-light p-6 transition-all hover:border-teal/20"
+          >
+            <div class="flex items-start justify-between">
+              <span class="font-mono text-xs text-cream-muted">{project.year}</span>
+              <svg
+                class="h-4 w-4 text-cream-muted opacity-0 transition-all group-hover:opacity-100 group-hover:text-teal"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10" />
+              </svg>
+            </div>
+            <h3 class="mt-4 font-display text-xl font-bold text-cream group-hover:text-teal">
+              {project.title}
+            </h3>
+            <p class="mt-2 text-sm text-cream-muted">{project.description}</p>
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              {
+                project.tags.map((tag) => (
+                  <span class="font-mono text-[10px] uppercase tracking-wider text-cream-muted">
+                    {tag}
+                  </span>
+                ))
+              }
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>

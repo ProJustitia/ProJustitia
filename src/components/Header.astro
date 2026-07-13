@@ -1,0 +1,103 @@
+---
+import { site } from "../content/site";
+---
+
+<header class="fixed top-0 left-0 right-0 z-40 border-b border-white/5 bg-ink/80 backdrop-blur-md">
+  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+    <a
+      href="#"
+      class="font-display text-lg font-bold tracking-tight text-cream transition-colors hover:text-teal"
+    >
+      {site.name.split(" ")[0]}<span class="text-teal">.</span>
+    </a>
+
+    <nav class="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+      {
+        site.nav.map((item) => (
+          <a
+            href={item.href}
+            class="nav-link font-mono text-xs uppercase tracking-widest text-cream-muted transition-colors hover:text-cream"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+    </nav>
+
+    <a
+      href="#contact"
+      class="hidden rounded-full border border-teal/30 bg-teal/10 px-5 py-2 font-mono text-xs uppercase tracking-widest text-teal transition-all hover:border-teal hover:bg-teal/20 md:inline-block"
+    >
+      Let's talk
+    </a>
+
+    <button
+      id="menu-toggle"
+      class="flex flex-col gap-1.5 md:hidden"
+      aria-label="Toggle menu"
+      aria-expanded="false"
+    >
+      <span class="block h-0.5 w-6 bg-cream transition-transform" id="bar-1"></span>
+      <span class="block h-0.5 w-6 bg-cream transition-opacity" id="bar-2"></span>
+      <span class="block h-0.5 w-6 bg-cream transition-transform" id="bar-3"></span>
+    </button>
+  </div>
+
+  <nav
+    id="mobile-menu"
+    class="hidden border-t border-white/5 bg-ink px-6 py-6 md:hidden"
+    aria-label="Mobile navigation"
+  >
+    <div class="flex flex-col gap-4">
+      {
+        site.nav.map((item) => (
+          <a
+            href={item.href}
+            class="font-mono text-sm uppercase tracking-widest text-cream-muted transition-colors hover:text-teal"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <a
+        href="#contact"
+        class="mt-2 inline-block font-mono text-sm uppercase tracking-widest text-teal"
+      >
+        Let's talk →
+      </a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+  const bar1 = document.getElementById("bar-1");
+  const bar2 = document.getElementById("bar-2");
+  const bar3 = document.getElementById("bar-3");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = menu?.classList.toggle("hidden") === false;
+    toggle.setAttribute("aria-expanded", String(isOpen));
+
+    if (isOpen) {
+      bar1?.classList.add("translate-y-2", "rotate-45");
+      bar2?.classList.add("opacity-0");
+      bar3?.classList.add("-translate-y-2", "-rotate-45");
+    } else {
+      bar1?.classList.remove("translate-y-2", "rotate-45");
+      bar2?.classList.remove("opacity-0");
+      bar3?.classList.remove("-translate-y-2", "-rotate-45");
+    }
+  });
+
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      menu.classList.add("hidden");
+      toggle?.setAttribute("aria-expanded", "false");
+      bar1?.classList.remove("translate-y-2", "rotate-45");
+      bar2?.classList.remove("opacity-0");
+      bar3?.classList.remove("-translate-y-2", "-rotate-45");
+    });
+  });
+</script>

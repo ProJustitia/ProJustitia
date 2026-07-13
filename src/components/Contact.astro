@@ -1,0 +1,65 @@
+---
+import { site } from "../content/site";
+---
+
+<section id="contact" class="relative py-32">
+  <div class="orb orb-teal left-1/2 top-0 h-64 w-64 -translate-x-1/2"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-10">
+    <div class="grid gap-16 lg:grid-cols-2">
+      <div>
+        <span class="font-mono text-xs uppercase tracking-[0.3em] text-coral">04 — Contact</span>
+        <h2 class="mt-4 font-display text-4xl font-bold leading-tight text-cream sm:text-5xl lg:text-6xl">
+          Let's build<br />
+          <span class="text-teal">something</span> together.
+        </h2>
+        <p class="mt-6 max-w-md text-lg text-cream-muted">
+          Whether you have a project in mind, want to collaborate, or just want to say hi — my inbox is always open.
+        </p>
+      </div>
+
+      <div class="flex flex-col justify-center">
+        <a
+          href={`mailto:${site.email}`}
+          class="group flex items-center justify-between rounded-2xl border border-white/5 bg-ink-light p-8 transition-all hover:border-teal/30 hover:bg-ink-muted"
+        >
+          <div>
+            <p class="font-mono text-xs uppercase tracking-widest text-cream-muted">Email</p>
+            <p class="mt-2 font-display text-2xl font-bold text-cream transition-colors group-hover:text-teal">
+              {site.email}
+            </p>
+          </div>
+          <svg
+            class="h-6 w-6 text-cream-muted transition-all group-hover:translate-x-1 group-hover:text-teal"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+
+        <div class="mt-4 grid grid-cols-2 gap-4">
+          <a
+            href={site.social.github}
+            rel="noopener noreferrer"
+            class="group rounded-2xl border border-white/5 bg-ink-light p-6 transition-all hover:border-teal/30"
+          >
+            <p class="font-mono text-xs uppercase tracking-widest text-cream-muted">GitHub</p>
+            <p class="mt-2 font-display text-lg font-bold text-cream group-hover:text-teal">→ ProJustitia</p>
+          </a>
+          <a
+            href={site.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group rounded-2xl border border-white/5 bg-ink-light p-6 transition-all hover:border-teal/30"
+          >
+            <p class="font-mono text-xs uppercase tracking-widest text-cream-muted">LinkedIn</p>
+            <p class="mt-2 font-display text-lg font-bold text-cream group-hover:text-teal">→ Firman Fitrah Ramadhan</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

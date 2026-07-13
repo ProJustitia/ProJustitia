@@ -1,0 +1,56 @@
+---
+import { site } from "../content/site";
+
+const doubled = [...site.skills, ...site.skills];
+---
+
+<section id="skills" class="relative overflow-hidden border-y border-white/5 py-20">
+  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+    <span class="font-mono text-xs uppercase tracking-[0.3em] text-coral">03 — Skills</span>
+    <h2 class="mt-4 font-display text-3xl font-bold text-cream sm:text-4xl">
+      Tools & technologies
+    </h2>
+  </div>
+
+  <div class="relative mt-12">
+    <div class="pointer-events-none absolute inset-y-0 left-0 z-10 w-24 bg-gradient-to-r from-ink to-transparent"></div>
+    <div class="pointer-events-none absolute inset-y-0 right-0 z-10 w-24 bg-gradient-to-l from-ink to-transparent"></div>
+
+    <div class="marquee-track flex w-max gap-6">
+      {
+        doubled.map((skill) => (
+          <span
+            class="flex shrink-0 items-center gap-3 rounded-full border border-white/5 bg-ink-light px-6 py-3 font-mono text-sm text-cream-muted"
+          >
+            <span class="h-1.5 w-1.5 rounded-full bg-teal"></span>
+            {skill}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="mx-auto mt-20 max-w-7xl px-6 lg:px-10">
+    <h3 class="font-mono text-xs uppercase tracking-[0.3em] text-cream-muted">Experience</h3>
+    <div class="mt-8 space-y-0">
+      {
+        site.experience.map((item, i) => (
+          <div class="grid gap-4 border-t border-white/5 py-8 sm:grid-cols-12 sm:gap-8">
+            <div class="sm:col-span-3">
+              <p class="font-mono text-xs uppercase tracking-widest text-cream-muted">
+                {item.period}
+              </p>
+            </div>
+            <div class="sm:col-span-4">
+              <h4 class="font-display text-xl font-bold text-cream">{item.role}</h4>
+              <p class="mt-1 text-teal">{item.company}</p>
+            </div>
+            <div class="sm:col-span-5">
+              <p class="text-cream-muted">{item.description}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,20 @@
+---
+import { site } from "../content/site";
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-white/5 py-10">
+  <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-6 sm:flex-row lg:px-10">
+    <p class="font-mono text-xs text-cream-muted">
+      © {year} {site.name}. Crafted with Astro & Tailwind.
+    </p>
+    <a
+      href={site.social.instagram}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="font-mono text-xs uppercase tracking-widest text-cream-muted transition-colors hover:text-teal"
+    >
+      @firmanftrah
+    </a>
+  </div>
+</footer>

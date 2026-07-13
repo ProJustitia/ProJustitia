@@ -1,0 +1,25 @@
+/* Portfolio theme — image-only profile card */
+
+.pc-card-wrapper.pc-portfolio-theme .pc-card {
+  height: min(72svh, 520px);
+  max-height: 520px;
+}
+
+.pc-card-wrapper.pc-portfolio-theme {
+  --behind-glow-color: rgba(45, 212, 191, 0.45);
+}
+
+.pc-card-wrapper.pc-image-only .pc-content:not(.pc-avatar-content) {
+  display: none !important;
+}
+
+.pc-card-wrapper.pc-image-only .pc-user-info {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .pc-card-wrapper.pc-portfolio-theme .pc-card {
+    height: min(65svh, 420px);
+    max-height: 420px;
+  }
+}
