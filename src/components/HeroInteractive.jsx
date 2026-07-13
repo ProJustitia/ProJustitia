@@ -80,23 +80,23 @@ export default function HeroInteractive({ site }) {
       />
 
       <div
-        className="hero-scroll-layer relative mx-auto w-full max-w-7xl px-6 lg:px-10"
+        className="hero-scroll-layer fluid-container fluid-container--wide relative"
         style={{
           opacity: scrollFade,
           transform: `translateY(${scrollY * 0.12}px)`
         }}
       >
         <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-10">
-          <div className="lg:col-span-7">
+          <div className="lg:col-span-7 min-w-0">
             <p
-              className={`hero-fade-in font-mono text-xs uppercase tracking-[0.3em] text-teal ${mounted ? 'hero-fade-in--active' : ''}`}
+              className={`hero-fade-in font-mono hero-status-fluid uppercase tracking-[0.3em] text-teal ${mounted ? 'hero-fade-in--active' : ''}`}
               style={{ transitionDelay: '0ms' }}
             >
               <span className="hero-status-dot" aria-hidden="true" />
               {site.availability}
             </p>
 
-            <h1 className="mt-6 font-display text-5xl font-extrabold leading-[0.95] tracking-tight text-cream sm:text-7xl lg:text-6xl xl:text-7xl">
+            <h1 className="hero-name-fluid mt-6 font-display font-extrabold leading-[0.95] tracking-tight text-cream">
               {nameWords.map((word, i) => (
                 <span
                   key={`${word}-${i}`}
@@ -110,14 +110,14 @@ export default function HeroInteractive({ site }) {
             </h1>
 
             <p
-              className={`hero-title-swap mt-4 font-display text-2xl font-medium text-cream-muted sm:text-3xl lg:text-2xl xl:text-3xl ${titleVisible ? 'hero-title-swap--visible' : ''}`}
+              className={`hero-title-swap hero-subtitle-fluid mt-4 font-display font-medium text-cream-muted ${titleVisible ? 'hero-title-swap--visible' : ''}`}
               aria-live="polite"
             >
               {titles[titleIndex]}
             </p>
 
             <p
-              className={`hero-fade-in mt-8 max-w-xl text-lg leading-relaxed text-cream-muted lg:text-xl ${mounted ? 'hero-fade-in--active' : ''}`}
+              className={`hero-fade-in hero-body-fluid mt-8 max-w-xl leading-relaxed text-cream-muted ${mounted ? 'hero-fade-in--active' : ''}`}
               style={{ transitionDelay: '380ms' }}
             >
               {site.tagline}
@@ -129,7 +129,7 @@ export default function HeroInteractive({ site }) {
             >
               <a
                 href="#work"
-                className="hero-btn-primary group inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3 font-mono text-xs uppercase tracking-widest text-ink transition-all hover:bg-teal-dim hover:shadow-[0_0_30px_rgba(45,212,191,0.3)]"
+                className="hero-btn-primary group inline-flex items-center gap-2 rounded-full bg-teal px-6 py-3 font-mono fluid-label uppercase tracking-widest text-ink transition-all hover:bg-teal-dim hover:shadow-[0_0_30px_rgba(45,212,191,0.3)]"
               >
                 View work
                 <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
@@ -138,7 +138,7 @@ export default function HeroInteractive({ site }) {
               </a>
               <a
                 href="#contact"
-                className="hero-btn-ghost inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 font-mono text-xs uppercase tracking-widest text-cream transition-all hover:border-white/25 hover:bg-white/5"
+                className="hero-btn-ghost inline-flex items-center gap-2 rounded-full border border-white/10 px-6 py-3 font-mono fluid-label uppercase tracking-widest text-cream transition-all hover:border-white/25 hover:bg-white/5"
               >
                 Get in touch
               </a>
@@ -167,7 +167,7 @@ export default function HeroInteractive({ site }) {
           className={`hero-fade-in mt-24 hidden items-center justify-between border-t border-white/5 pt-8 lg:flex ${mounted ? 'hero-fade-in--active' : ''}`}
           style={{ transitionDelay: '620ms' }}
         >
-          <p className="font-mono text-xs uppercase tracking-widest text-cream-muted">
+          <p className="font-mono fluid-label uppercase tracking-widest text-cream-muted">
             Scroll to explore
           </p>
           <div className="flex items-center gap-3">
@@ -176,7 +176,7 @@ export default function HeroInteractive({ site }) {
               <path strokeLinecap="round" strokeLinejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
             </svg>
           </div>
-          <p className="font-mono text-xs text-cream-muted">{site.location}</p>
+          <p className="font-mono fluid-label text-cream-muted">{site.location}</p>
         </div>
       </div>
     </section>

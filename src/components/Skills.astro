@@ -5,9 +5,9 @@ const doubled = [...site.skills, ...site.skills];
 ---
 
 <section id="skills" class="relative overflow-hidden border-y border-white/5 py-20">
-  <div class="mx-auto max-w-7xl px-6 lg:px-10">
-    <span data-reveal="left" class="font-mono text-xs uppercase tracking-[0.3em] text-coral">03 — Skills</span>
-    <h2 data-reveal data-delay="1" class="mt-4 font-display text-3xl font-bold text-cream sm:text-4xl">
+  <div class="fluid-container">
+    <span data-reveal="left" class="fluid-label font-mono uppercase tracking-[0.3em] text-coral">03 — Skills</span>
+    <h2 data-reveal data-delay="1" class="fluid-section-heading mt-4 font-display font-bold text-cream">
       Tools & technologies
     </h2>
   </div>
@@ -20,7 +20,7 @@ const doubled = [...site.skills, ...site.skills];
       {
         doubled.map((skill) => (
           <span
-            class="flex shrink-0 items-center gap-3 rounded-full border border-white/5 bg-ink-light px-6 py-3 font-mono text-sm text-cream-muted"
+            class="fluid-small flex shrink-0 items-center gap-3 rounded-full border border-white/5 bg-ink-light px-6 py-3 font-mono text-cream-muted"
           >
             <span class="h-1.5 w-1.5 rounded-full bg-teal"></span>
             {skill}
@@ -30,23 +30,23 @@ const doubled = [...site.skills, ...site.skills];
     </div>
   </div>
 
-  <div class="mx-auto mt-20 max-w-7xl px-6 lg:px-10">
-    <h3 data-reveal class="font-mono text-xs uppercase tracking-[0.3em] text-cream-muted">Experience</h3>
+  <div class="fluid-container mt-20">
+    <h3 data-reveal class="fluid-label font-mono uppercase tracking-[0.3em] text-cream-muted">Experience</h3>
     <div class="mt-8 space-y-0">
       {
         site.experience.map((item, i) => (
           <div data-reveal data-delay={String(Math.min(i + 1, 4))} class="grid gap-4 border-t border-white/5 py-8 sm:grid-cols-12 sm:gap-8">
             <div class="sm:col-span-3">
-              <p class="font-mono text-xs uppercase tracking-widest text-cream-muted">
+              <p class="fluid-label font-mono uppercase tracking-widest text-cream-muted">
                 {item.period}
               </p>
             </div>
             <div class="sm:col-span-4">
-              <h4 class="font-display text-xl font-bold text-cream">{item.role}</h4>
-              <p class="mt-1 text-teal">{item.company}</p>
+              <h4 class="fluid-small font-display font-bold text-cream">{item.role}</h4>
+              <p class="fluid-card-body mt-1 text-teal">{item.company}</p>
             </div>
             <div class="sm:col-span-5">
-              <p class="text-cream-muted">{item.description}</p>
+              <p class="fluid-card-body text-cream-muted">{item.description}</p>
             </div>
           </div>
         ))

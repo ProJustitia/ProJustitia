@@ -3,17 +3,17 @@ import { site } from "../content/site";
 ---
 
 <section id="about" class="relative py-32">
-  <div class="mx-auto max-w-7xl px-6 lg:px-10">
+  <div class="fluid-container">
     <div class="grid gap-16 lg:grid-cols-12">
       <div class="lg:col-span-4">
-        <span data-reveal="left" class="font-mono text-xs uppercase tracking-[0.3em] text-coral">01 — About</span>
-        <h2 data-reveal data-delay="1" class="mt-4 font-display text-4xl font-bold leading-tight text-cream sm:text-5xl">
+        <span data-reveal="left" class="fluid-label font-mono uppercase tracking-[0.3em] text-coral">01 — About</span>
+        <h2 data-reveal data-delay="1" class="fluid-section-heading mt-4 font-display font-bold leading-tight text-cream">
           {site.about.headline}
         </h2>
       </div>
 
       <div class="lg:col-span-5">
-        <div class="space-y-6 text-lg leading-relaxed text-cream-muted">
+        <div class="fluid-section-body space-y-6 leading-relaxed text-cream-muted">
           {
             site.about.paragraphs.map((p, i) => (
               <p data-reveal data-delay={String(i + 2)}>{p}</p>
@@ -27,8 +27,8 @@ import { site } from "../content/site";
           {
             site.about.stats.map((stat, i) => (
               <div data-reveal="scale" data-delay={String(i + 2)} class="rounded-2xl border border-white/5 bg-ink-light p-6">
-                <p class="font-display text-3xl font-bold text-teal">{stat.value}</p>
-                <p class="mt-1 font-mono text-xs uppercase tracking-widest text-cream-muted">
+                <p class="fluid-card-heading font-display font-bold text-teal">{stat.value}</p>
+                <p class="fluid-label mt-1 font-mono uppercase tracking-widest text-cream-muted">
                   {stat.label}
                 </p>
               </div>

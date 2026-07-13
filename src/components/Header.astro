@@ -3,10 +3,10 @@ import { site } from "../content/site";
 ---
 
 <header class="fixed top-0 left-0 right-0 z-40 border-b border-white/5 bg-ink/80 backdrop-blur-md">
-  <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
+  <div class="fluid-container fluid-container--wide flex items-center justify-between py-4">
     <a
       href="#"
-      class="font-display text-lg font-bold tracking-tight text-cream transition-colors hover:text-teal"
+      class="font-display fluid-small font-bold tracking-tight text-cream transition-colors hover:text-teal"
     >
       {site.name.split(" ")[0]}<span class="text-teal">.</span>
     </a>
@@ -16,7 +16,7 @@ import { site } from "../content/site";
         site.nav.map((item) => (
           <a
             href={item.href}
-            class="nav-link font-mono text-xs uppercase tracking-widest text-cream-muted transition-colors hover:text-cream"
+            class="nav-link fluid-label font-mono uppercase tracking-widest text-cream-muted transition-colors hover:text-cream"
           >
             {item.label}
           </a>
@@ -26,7 +26,7 @@ import { site } from "../content/site";
 
     <a
       href="#contact"
-      class="hidden rounded-full border border-teal/30 bg-teal/10 px-5 py-2 font-mono text-xs uppercase tracking-widest text-teal transition-all hover:border-teal hover:bg-teal/20 md:inline-block"
+      class="hidden rounded-full border border-teal/30 bg-teal/10 px-5 py-2 fluid-label font-mono uppercase tracking-widest text-teal transition-all hover:border-teal hover:bg-teal/20 md:inline-block"
     >
       Let's talk
     </a>
@@ -53,7 +53,7 @@ import { site } from "../content/site";
         site.nav.map((item) => (
           <a
             href={item.href}
-            class="font-mono text-sm uppercase tracking-widest text-cream-muted transition-colors hover:text-teal"
+            class="font-mono fluid-label uppercase tracking-widest text-cream-muted transition-colors hover:text-teal"
           >
             {item.label}
           </a>
@@ -61,7 +61,7 @@ import { site } from "../content/site";
       }
       <a
         href="#contact"
-        class="mt-2 inline-block font-mono text-sm uppercase tracking-widest text-teal"
+        class="mt-2 inline-block font-mono fluid-label uppercase tracking-widest text-teal"
       >
         Let's talk →
       </a>
