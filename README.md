@@ -1,5 +1,5 @@
 <div align="center">
-  <video src="https://github.com/ProJustitia/ProJustitia/raw/main/public/assets/train.mp4" autoplay loop muted playsinline width="100%"></video>
+  <img src="public/assets/cat.gif" alt="Cat" width="80%">
 </div>
 
 ---
